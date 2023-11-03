@@ -1,6 +1,6 @@
 <template>
     <div>
-      <button :style="{ backgroundColor: color }" class="custom-button">Primary</button>
+      <button class="custom-button" :style="{backgroundColor:color1}">Shop Now &#8594;</button>
     </div>
   </template>
   
@@ -8,15 +8,15 @@
   export default {
     name: "Button1",
     props: {
-      color: String,
+      color1: String,
     },
   };
   </script>
   
   <style scoped>
   .custom-button {
-    height: 25px;
-    width: 180px;
+    height: 36px;
+    width: 120px;
     border: 1px solid grey;
     color: white;
     font-weight: 700;

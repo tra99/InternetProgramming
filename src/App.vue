@@ -19,13 +19,8 @@
         :style="{ backgroundColor: item.color }"
         :title="item.title"
         :img1="item.img1"
+        :btn_color="item.btn_color"
       ></Card1>
-
-      <Button1
-        v-for="(item, index) in cardData1"
-        :key="index"
-        :color="item.color"
-      ></Button1>
     </div>
   </div>
 </template>
@@ -33,13 +28,11 @@
 <script>
 import Card from "@/components/Card.vue";
 import Card1 from "@/components/Card_01.vue"
-import Button1 from "@/components/Button_C.vue"
 
 export default {
   components: {
     Card,
     Card1,
-    Button1
   },
   data() {
     return {
@@ -110,18 +103,21 @@ export default {
       cardData1: [
       {
         title:"Everyday Fresh & Clean with Our Products",
-        img1: "./src/assets/remove1.png",
-        color: "#FFFCEB",
+        img1: "./src/assets/Cms-04.png",
+        color: "#f0e8d5",
+        btn_color:"#3bb77e"
       },
       {
         title:"Make Your Breakfast Healthy and Easy",
-        img1: "./src/assets/remove1.png",
-        color:"#030bfc"
+        img1: "./src/assets/remove3.png",
+        btn_color:"#3bb77e",
+        color:"#f3e8e8"
       },
       {
         title:"The Best Organic Product Online",
-        img1: "./src/assets/remove2.png",
-        color: "#FF5733",
+        img1: "./src/assets/Cms-03.png",
+        btn_color: "#fdc040",
+        color:"#e7eaf3"
       }
     ],
       
@@ -143,16 +139,15 @@ export default {
 .card-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .bordered-card {
   border-color: #F2FCE4;
 }
 .card-list1{
-
   margin-top: 100px;
   display: flex;
-  justify-content: space-evenly;
+  gap: 10px;
 }
 </style>
