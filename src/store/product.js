@@ -1,6 +1,6 @@
 import {defineStore} from "pinia";
 
-export const productStore=defineStore("product",{
+export const useProductStore = defineStore("product",{
     state:()=>({
       groups:["Milks & Diaries","Coffee & Teas","Pet Foods","Meats","Vegetables","Fruits"],
         product:[
@@ -86,6 +86,52 @@ export const productStore=defineStore("product",{
             btn_color: "#fdc040",
             color:"#e7eaf3"
           }
+        ],
+        product2:[
+          {
+            bgColor1:"#fdc040",
+            text1:"-17%",
+            imgPro:"./src/assets/mango.png",
+            describe:"Seeds of Change Organic Quinoa, Brown, & Red Rice"
+          },
+          {
+            text1:"Hot",
+            imgPro:"./src/assets/corn.png",
+            describe:"All Natural Italian-Style Chicken Meatballs"
+          },
+          {
+            text1:"Sale",
+            imgPro:"./src/assets/orange.png",
+            describe:"Angie's Boomchickapop Sweet & Salty Kettle Corn"
+          },
+          {
+            imgPro:"./src/assets/chilli.png",
+            describe:"Foster Farms Takeout Crispy Classic Buffalo Wings"
+          },
+          {
+            imgPro:"./src/assets/almond.png",
+            describe:"Blue Diamond Almonds Lightly Salted Vegetables"
+          },
+          // {
+          //   imgPro:"./src/assets/chobani.png",
+          //   describe:"Chobani Complete Vanilla Greek Yogurt"
+          // },
+          // {
+          //   imgPro:"./src/assets/almond.png",
+          //   describe:"Blue Diamond Almonds Lightly Salted Vegetables"
+          // },
+          // {
+          //   imgPro:"./src/assets/almond.png",
+          //   describe:"Blue Diamond Almonds Lightly Salted Vegetables"
+          // },
+          // {
+          //   imgPro:"./src/assets/almond.png",
+          //   describe:"Blue Diamond Almonds Lightly Salted Vegetables"
+          // },
+          // {
+          //   imgPro:"./src/assets/almond.png",
+          //   describe:"Blue Diamond Almonds Lightly Salted Vegetables"
+          // },
         ]
     }),
     getters:{

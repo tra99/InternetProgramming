@@ -1,8 +1,19 @@
 <template>
   <div>
+    <div style="display: flex; justify-content: space-between;padding: 20px 20px 20px 20px;">
+      <div style="font-weight: 600; font-size: 24px;">Featured Category</div>
+      <div style="display: flex;gap: 30px;">
+        <div style="font-weight: 700;">All</div>
+      <menu1
+        :menu="groups"
+      >
+      </menu1>
+      </div>
+    </div>
+
     <div class="card-list">
       <Card
-        v-for="(item, index) in cardData"
+        v-for="(item, index) in product"
         :key="index"
         :class="{ 'bordered-card': selectedCardIndex === index }"
         :style="{ backgroundColor: item.color }"
@@ -11,10 +22,10 @@
         :subtitle="item.subtitle"
       >
       </Card>
-    </div> 
+    </div>
     <div class="card-list1">
       <Card1
-        v-for="(item, index) in cardData1"
+        v-for="(item, index) in promotion"
         :key="index"
         :style="{ backgroundColor: item.color }"
         :title="item.title"
@@ -22,118 +33,53 @@
         :btn_color="item.btn_color"
       ></Card1>
     </div>
+    <div style="display: flex; justify-content: space-between;padding: 20px 20px 20px 20px;">
+      <div style="font-weight: 600; font-size: 24px;">Popular Products</div>
+      <div style="display: flex;gap: 30px;">
+        <div style="font-weight: 700;">All</div>
+      <menu1
+        :menu="groups"
+      >
+      </menu1>
+      </div>
+    </div>
+  </div>
+  <div class="product2">
+    <product
+      v-for="(item,index) in product2"
+      :key="index"
+      :bgColor1="item.bgColor1 "
+      :imgPro="item.imgPro"
+      :describe="item.describe"
+      :text1="item.text1"
+    ></product>
   </div>
 </template>
 
 <script>
 import Card from "@/components/Card.vue";
-import Card1 from "@/components/Card_01.vue"
+import Card1 from "@/components/Card_01.vue";
+import { mapState } from "pinia";
+import { useProductStore } from "./store/product.js"; 
+import menu1 from "@/components/Menu_item.vue"
+import product from "@/components/Product_compo.vue"
 
 export default {
   components: {
     Card,
     Card1,
+    menu1,
+    product
   },
-  data() {
-    return {
-      cardData: [   
-        {
-          imageSrc:"./src/assets/cat-13.png",
-          content: "Cake & Milk",
-          color: "#81B13D",
-          subtitle:"14 items"
-        },
-        {
-          imageSrc: "./src/assets/Cat-11.png",
-          content: "Peach",
-          color: "#FFFCEB",
-          subtitle:"17 items"
-        },
-        {
-          imageSrc: "./src/assets/Cat-12.png",
-          content: "Oganic Kiwi",
-          color: "#ECFFEC",
-          subtitle:"21 items"
-        },
-        {
-          imageSrc: "./src/assets/Cat-9.png",
-          backgroundColor:"none",
-          content: "Red Apple",
-          color: "#FEEFEA",
-          subtitle:"68 items"
-        },
-        {
-          imageSrc: "./src/assets/Cat-3.png",
-          content: "Snack",
-          color: "#FFF3EB",
-          subtitle:"16items"
-        },
-        {
-          imageSrc: "./src/assets/Cat-4.png",
-          content: "Black Plum",
-          color: "#FFF3FF",
-          subtitle:"25 items"
-        },
-        {
-          imageSrc: "./src/assets/Cat-1.png",
-          content: "Vegatable",
-          color: "#F2FCE4",
-          subtitle:"25 items"
-        },
-        {
-          imageSrc: "./src/assets/Cat-15.png",
-          content: "Headphone",
-          color: "#FFFCEB",
-          subtitle:"33 items"
-        },
-        {
-          imageSrc: "./src/assets/Cat-14.png",
-          content: "Cake & Milk",
-          color: "#F2FCE4",
-          subtitle:"54 items"
-        },
-        {
-          imageSrc: "./src/assets/Cat-7.png",
-          content: "Orange",
-          color: "#FFF3FF",
-          subtitle:"63 items"
-        },
-      ],
-      selectedCardIndex: null,
-      cardData1: [
-      {
-        title:"Everyday Fresh & Clean with Our Products",
-        img1: "./src/assets/Cms-04.png",
-        color: "#f0e8d5",
-        btn_color:"#3bb77e"
-      },
-      {
-        title:"Make Your Breakfast Healthy and Easy",
-        img1: "./src/assets/remove3.png",
-        btn_color:"#3bb77e",
-        color:"#f3e8e8"
-      },
-      {
-        title:"The Best Organic Product Online",
-        img1: "./src/assets/Cms-03.png",
-        btn_color: "#fdc040",
-        color:"#e7eaf3"
-      }
-    ],
-      
-    };
-  },
-  methods: {
-    selectCard(index) {
-      if (this.selectedCardIndex === index) {
-        this.selectedCardIndex = null;
-      } else {
-        this.selectedCardIndex = index;
-      }
-    },
+  computed: {
+    ...mapState(useProductStore,['product']),
+    ...mapState(useProductStore,['promotion']),
+    ...mapState(useProductStore,['groups']),
+    ...mapState(useProductStore,['product2']),
   },
 };
 </script>
+
 
 <style scoped>
 .card-list {
@@ -145,9 +91,15 @@ export default {
 .bordered-card {
   border-color: #F2FCE4;
 }
-.card-list1{
+
+.card-list1 {
   margin-top: 100px;
   display: flex;
   gap: 10px;
+} 
+.product2{
+  display: flex;
+  gap: 30px;
 }
+
 </style>
