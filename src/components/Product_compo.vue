@@ -1,5 +1,5 @@
 <template>
-    <div class="container1">
+    <div class="product">
         <div class="stack" :style="{backgroundColor:bgColor1}">{{ text1 }}</div>
         <img style="width: 100%;height: 40%;" :src="imgPro" alt="product">
         <div style="padding-left: 16px;padding-right: 16px;">
@@ -29,14 +29,13 @@
     }
 </script>
 <style>
-    .container1{
+    .product{
         border: 1px solid rgb(195, 194, 194);
         border-radius: 10px;
-        /* width: 300px; */
-        height: 90%;
+        height: 55vh;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
-    .stack{
+    .product .stack{
         width: 28%;
         height: 44px;
         display: flex;
@@ -46,12 +45,12 @@
         border-radius: 0px 20px 20px 0;
         color: white;
     }
-    .name-pro{
+    .product .name-pro{
         font-size: 16px;
         font-weight: bold;
         padding-top: 6px;
     }
-    .button1{
+    .product .button1{
         background-color: rgb(176, 220, 176);
         border: none;
         /* padding: 8px ; */
