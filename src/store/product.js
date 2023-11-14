@@ -89,17 +89,19 @@ export const useProductStore = defineStore("product",{
         ],
         product2:[
           {
-            bgColor1:"#fdc040",
+            bgColor1:"#3bb77e",
             text1:"-17%",
             imgPro:"./src/assets/mango.png",
             describe:"Seeds of Change Organic Quinoa, Brown, & Red Rice"
           },
           {
+            bgColor1:"#fd6e6e",
             text1:"Hot",
             imgPro:"./src/assets/corn.png",
             describe:"All Natural Italian-Style Chicken Meatballs"
           },
           {
+            bgColor1:"#fdc040",
             text1:"Sale",
             imgPro:"./src/assets/orange.png",
             describe:"Angie's Boomchickapop Sweet & Salty Kettle Corn"
@@ -112,26 +114,28 @@ export const useProductStore = defineStore("product",{
             imgPro:"./src/assets/almond.png",
             describe:"Blue Diamond Almonds Lightly Salted Vegetables"
           },
-          // {
-          //   imgPro:"./src/assets/chobani.png",
-          //   describe:"Chobani Complete Vanilla Greek Yogurt"
-          // },
-          // {
-          //   imgPro:"./src/assets/almond.png",
-          //   describe:"Blue Diamond Almonds Lightly Salted Vegetables"
-          // },
-          // {
-          //   imgPro:"./src/assets/almond.png",
-          //   describe:"Blue Diamond Almonds Lightly Salted Vegetables"
-          // },
-          // {
-          //   imgPro:"./src/assets/almond.png",
-          //   describe:"Blue Diamond Almonds Lightly Salted Vegetables"
-          // },
-          // {
-          //   imgPro:"./src/assets/almond.png",
-          //   describe:"Blue Diamond Almonds Lightly Salted Vegetables"
-          // },
+          {
+            imgPro:"./src/assets/chobani.png",
+            describe:"Chobani Complete Vanilla Greek Yogurt"
+          },
+          {
+            imgPro:"./src/assets/ginger.png",
+            describe:"Canada Dry Ginger Ale - 2L Bottle - 200ml - 400g"
+          },
+          {
+            imgPro:"./src/assets/steak.png",
+            describe:"Encore Seafoods Suffered Alskan Salmon"
+          },
+          {
+            imgPro:"./src/assets/goton.png",
+            describe:"Gorton's Beer Battered Fish Fillets with soft paper"
+          },
+          {
+            bgColor1:"#fd6e6e",
+            text1:"Hot",
+            imgPro:"./src/assets/onion.png",
+            describe:"Haagen-Dazs Caramel Cone Ice Cream Ketchup"
+          },
         ]
     }),
     getters:{

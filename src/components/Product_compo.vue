@@ -1,7 +1,7 @@
 <template>
     <div class="container1">
-        <div class="stack" :style="{backgroundColor:bgColor}">{{ text1 }}</div>
-        <img style="width: 100%;height: 50%;" :src="imgPro" alt="product">
+        <div class="stack" :style="{backgroundColor:bgColor1}">{{ text1 }}</div>
+        <img style="width: 100%;height: 40%;" :src="imgPro" alt="product">
         <div style="padding-left: 16px;padding-right: 16px;">
             <div style="color: grey;">Hodo Foods</div>
             <div class="name-pro">{{ describe }}</div>
@@ -10,7 +10,7 @@
                 <div style="color: grey;">(4.0)</div>
             </div>
             <div style="color: grey;padding-top: 8px;">500 gram</div>
-            <div style="padding-top: 10px;padding-bottom: 10px; display: flex; justify-content: space-between;">
+            <div style="padding-top: 10px;display: flex; justify-content: space-between;">
                 <div style="margin-top: 4px; font-size: 18px;font-size: 20px;color: rgb(59, 183, 126);font-weight: bold;">$2.51 <span style="text-decoration:line-through;font-size: 14px;color: grey;">$2.00</span></div>
                 <button class="button1">Add +</button>
             </div>
@@ -32,7 +32,8 @@
     .container1{
         border: 1px solid rgb(195, 194, 194);
         border-radius: 10px;
-        width: 300px;
+        /* width: 300px; */
+        height: 90%;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     .stack{
@@ -53,7 +54,7 @@
     .button1{
         background-color: rgb(176, 220, 176);
         border: none;
-        padding: 8px 20px;
+        /* padding: 8px ; */
         border-radius: 6px;
         color: green;
         font-weight: 600;

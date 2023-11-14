@@ -45,7 +45,7 @@
     </div>
   </div>
   <div class="product2">
-    <product
+    <product class="product-list"
       v-for="(item,index) in product2"
       :key="index"
       :bgColor1="item.bgColor1 "
@@ -98,8 +98,10 @@ export default {
   gap: 10px;
 } 
 .product2{
-  display: flex;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  /* width: 100%; */
+  gap: 20px;
 }
 
 </style>
