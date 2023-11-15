@@ -3518,50 +3518,50 @@ const ql = pt(Dl, [['render', Vl]]),
           subtitle: '17 items'
         },
         {
-          imageSrc: './assets/Cat-12.png',
+          imageSrc: './assets/cat-12.png',
           content: 'Oganic Kiwi',
           color: '#ECFFEC',
           subtitle: '21 items'
         },
         {
-          imageSrc: './assets/Cat-9.png',
+          imageSrc: './assets/cat-9.png',
           backgroundColor: 'none',
           content: 'Red Apple',
           color: '#FEEFEA',
           subtitle: '68 items'
         },
         {
-          imageSrc: './assets/Cat-3.png',
+          imageSrc: './assets/cat-3.png',
           content: 'Snack',
           color: '#FFF3EB',
           subtitle: '16items'
         },
         {
-          imageSrc: './assets/Cat-4.png',
+          imageSrc: './assets/cat-4.png',
           content: 'Black Plum',
           color: '#FFF3FF',
           subtitle: '25 items'
         },
         {
-          imageSrc: './assets/Cat-1.png',
+          imageSrc: './assets/cat-1.png',
           content: 'Vegatable',
           color: '#F2FCE4',
           subtitle: '25 items'
         },
         {
-          imageSrc: './assets/Cat-15.png',
+          imageSrc: './assets/cat-15.png',
           content: 'Headphone',
           color: '#FFFCEB',
           subtitle: '33 items'
         },
         {
-          imageSrc: './assets/Cat-14.png',
+          imageSrc: './assets/cat-14.png',
           content: 'Cake & Milk',
           color: '#F2FCE4',
           subtitle: '54 items'
         },
         {
-          imageSrc: './assets/Cat-7.png',
+          imageSrc: './assets/cat-7.png',
           content: 'Orange',
           color: '#FFF3FF',
           subtitle: '63 items'
