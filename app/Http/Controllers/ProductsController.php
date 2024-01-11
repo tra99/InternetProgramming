@@ -7,59 +7,33 @@ use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
+    public function GetProduct(){
+        $getProducts=Products::select('*')->get();
+        return response()->json(['code'=>200,"message"=>"Get Successfully",'data'=>$getProducts]);
+    }
+    public function PostProduct(Request $request){
+        $new_product = Products::create([
+            'name'=>$request->name,
+            'category_id'=>$request->category_id,
+            'pricing'=>$request->pricing
+        ]);
+        return "Created successfully";
+    }
+    public function GetProductById($id){
+        $getProducts = Products::select('*')->where('id',$id)->first();
+
+        return response()->json(['code'=>200,"message"=>"Get Successfully",'data'=>$getProducts]);
+    }
+    public function UpdateProduct(Request $request,$id){
+        $updateProduct=Products::where('id',$id)->update([
+            'name'=>$request->name,
+            'category_id'=>$request->category_id,
+            'pricing'=>$request->pricing
+        ]);
+    }
+    public function DeleteProduct(Request $request,$id){
+        $deleteProduct=Products::where('id',$id)->delete();
+        return response()->json(['code'=>200,"message"=>"Deleted Successfully"]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Products $products)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Products $products)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Products $products)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Products $products)
-    {
-        //
-    }
 }

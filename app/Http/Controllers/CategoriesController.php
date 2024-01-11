@@ -7,59 +7,32 @@ use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
+    public function GetCategory(){
+        $getCategories = Categories::select('*')->get();
+        return response()->json(['code'=>200,"message"=>"Create Successfully",'data'=>$getCategories]);
+    }
+    public function PostCategory(Request $request){
+        $new_category = Categories::create([
+            'name'=>$request->name
+        ]);
+        return "success";
+    }
+    public function GetCategoryById($id){
+        $getCategory = Categories::select('*')->where('id',$id)->first();
+
+        return response()->json(['code'=>200,"message"=>"Create Successfully",'data'=>$getCategory]);
+    }
+    public function UpdateCategory(Request $request , $id){
+        $updateCategory = Categories::where('id',$id)->update([
+            'name'=>$request->name
+        ]);
+
+        return response()->json(['code'=>200,"message"=>"Update Successfully"]);
+    }
+    public function DeleteCategory(Request $request , $id){
+        $deleteCategory = Categories::where('id',$id)->delete();
+
+        return response()->json(['code'=>200,"message"=>"Delete Successfully"]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Categories $categories)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Categories $categories)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Categories $categories)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Categories $categories)
-    {
-        //
-    }
 }
