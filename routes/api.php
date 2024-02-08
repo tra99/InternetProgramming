@@ -2,10 +2,9 @@
 
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ProductsController;
-use App\Models\Categories;
-use Illuminate\Http\Request;
-use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +34,7 @@ Route::controller(ProductsController::class)->group(function(){
     Route::patch("/product/{productId}","UpdateProduct");
     Route::delete("/product/{productId}","DeleteProduct");
 });
+// Auth controller
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/verify_otp', [AuthController::class, 'verifyOTP']);

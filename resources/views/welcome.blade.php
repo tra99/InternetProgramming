@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+{{-- <!-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -155,5 +155,19 @@
             Power by Laravel v.10 <br/>Version 0.1
         </h5>
     </d>
+</body>
+</html> --}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Email</title>
+</head>
+<body>
+    <p>Welcome to E-commerce,</p>
+    <p>You may activate your account by using the following OTP:</p>
+    <p><strong>{{ $otp }}</strong></p>
+    <p>Thank you,</p>
 </body>
 </html>
