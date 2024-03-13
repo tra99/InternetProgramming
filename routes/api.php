@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::put('/users/{id}', 'ProfileController@update');
-Route::delete('/users/{id}', 'ProfileController@destroy');
+Route::middleware('auth:api')->get('/test', function (Request $request) {
+    return "hello";
+});
+// Route::middleware('auth:api')->post('/user', 'ProfileController@store');
+Route::put('/users/{id}', [ProfileController::class, "update"]);
+Route::delete('/users/{id}', [ProfileController::class, "destroy"]);
 

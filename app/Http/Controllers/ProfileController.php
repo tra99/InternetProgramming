@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\User;
 /**
  * @OA\Info(
  *     title="Full Mark pls",
@@ -41,6 +42,27 @@ class ProfileController extends Controller
             'user' => $request->user(),
         ]);
     }
+
+    // public function store(Request $request): RedirectResponse
+    // {
+    //     // Use validation to ensure correct data
+    //     $validatedData = $request->validate([
+    //         'name' => 'required|string|max:255',
+    //         'email' => 'required|string|email|unique:users,email',
+    //         'password' => 'required|string|min:8|confirmed',
+    //     ]);
+
+    //     // Create a new user instance
+    //     $user = User::create($validatedData);
+
+    //     // Optionally send a verification email if needed
+    //     // ...
+
+    //     // Login or redirect to appropriate location after creation
+    //     Auth::login($user);
+
+    //     return Redirect::to('/')->with('status', 'user-created');
+    // }
 
     /**
      * Update the user's profile information.
