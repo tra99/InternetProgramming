@@ -38,8 +38,8 @@ require __DIR__.'/auth.php';
 
 Route::controller(HomeController::class)->group(function(){
     Route::get('/',"renderHome")            ->name("home");
-    Route::get('/product/add',"add")        ->name("product.goToCreate");
-    Route::get('/product/edit/{id}',"edit") ->name("product.goToEdit");
-    Route::post('/product/store',"store")   ->name("product.create");
+    Route::get('/add',"add")        ->name("product.goToCreate");
+    Route::get('/edit/{id}',"edit") ->name("product.goToEdit");
+    Route::post('/store',"store")   ->name("product.create");
 });
 
