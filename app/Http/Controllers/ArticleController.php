@@ -40,22 +40,34 @@ class ArticleController extends Controller
 
     public function allArticlesOfAuthor(Request $request)
     {
-        $request->validate(
-            [
-                'author_name'        => 'required'
-            ]
-        );
+        $request->validate([
+            'author_name' => 'required'
+        ]);
 
         $author = Author::with(['articles'])
-        ->select('id','name','user_id')
-        ->where('name', $request->author_name)
-        ->first();
+            ->select('id','name','user_id')
+            ->where('name', $request->author_name)
+            ->first();
+        // return $author-> articles;
+
+        if (!$author) {
+            return response()->json([
+                'message' => "Author not found"
+            ], Response::HTTP_NOT_FOUND);
+        }
+
+        // Collect all audiences
+        $audiences = [];
+        foreach ($author->articles as $article) {
+            foreach ($article->audiences as $audience) {
+                $audiences[] = $audience;
+            }
+        }
 
         return response()->json([
-            'author'         => $author,
-            'message'        => "All articles of author '".$request->author_name
+            'audiences' => $audiences,
+            // 'message' => "All audiences of articles by author '".$request->author_name."'"
         ], Response::HTTP_OK);
-
-
     }
+ 
 }

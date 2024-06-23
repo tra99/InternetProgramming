@@ -38,8 +38,11 @@ Route::group(['prefix'=>'comment'],function(){
         Route::post('/toArticle','addCommentToArticle');
         Route::get('/getByAudience','allCommentsOfAudience');
         Route::get('/getTopic','allCommentsWithTopic');
+        Route::get('/getByArticle','allCommentsOfArticle');     
     });
 });
+
+Route::get('/articles/by-author', [AuthorController::class, 'getArticlesByAuthor']);
 
 
 

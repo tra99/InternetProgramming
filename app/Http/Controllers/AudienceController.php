@@ -69,10 +69,11 @@ class AudienceController extends Controller
         ->where('name', $request->article_name)
         ->first();
 
-        return response()->json([
-            'article'         => $article,
-            'message'        => "all audiences of article '".$request->article_name
-        ], Response::HTTP_OK);
+        // return response()->json([
+        //     'article'         => $article,
+        //     'message'        => "all audiences of article '".$request->article_name
+        // ], Response::HTTP_OK);
+        return $article->Audiences;
 
     }
 
@@ -84,15 +85,15 @@ class AudienceController extends Controller
         );
 
         $author = Author::with(['audiences'])
-        ->select('id','name','user_id')
+        // ->select('id','name','user_id')
         ->where('name', $request->author_name)
         ->first();
 
-        return response()->json([
-            'author'         => $author,
-            'message'        => "all audiences of author ".$request->author_name
-        ], Response::HTTP_OK);
-
+        // return response()->json([
+        //     'author'         => $author,
+        //     'message'        => "all audiences of author ".$request->author_name
+        // ], Response::HTTP_OK);
+        return $author-> articles;
     }
 
 }
